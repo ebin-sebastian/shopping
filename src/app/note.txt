@@ -1,0 +1,6 @@
+>create module for lazy laoding ----   ng g module products --route products --module app.module
+
+
+install json server  ------    npm i --save json-server
+
+npx json-server --watch db.json --port 3000
