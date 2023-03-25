@@ -1,23 +1,65 @@
+<div class="container-fluid">
+    <div style="display: flex; justify-content: space-evenly" class="container d-flex">
+        <div class="p-4 m-2 border" style="border-radius: 15px">
+            <a (click)="filter('')">
+                <img style="width: 100px; height: 100px" src="https://i.postimg.cc/Qd7YqP4V/allprod.webp" alt="" />
+            </a>
+            <h6 style="text-decoration: none; text-align: center; color: black">
+                <strong>All Products</strong>
+            </h6>
+        </div>
+        <div class="p-4 m-2 border" style="border-radius: 15px">
+            <a (click)="filter('2')">
+                <img style="width: 100px; height: 100px" src="https://i.postimg.cc/GhP6w9nd/fashion.jpg" alt="" />
+            </a>
+            <h6 style="text-decoration: none; text-align: center; color: black">
+                <strong>Fashion</strong>
+            </h6>
+        </div>
+        <div class="p-4 m-2 border" style="border-radius: 15px">
+            <a (click)="filter('1')">
+                <img style="width: 100px; height: 100px" src="https://i.postimg.cc/3wfPS65G/electonics.jpg" alt="" />
+            </a>
+            <h6 style="text-decoration: none; text-align: center; color: black">
+                <strong>Electronics</strong>
+            </h6>
+        </div>
+        <div class="p-4 m-2 border" style="border-radius: 15px">
+            <a (click)="filter('3')">
+                <img style="width: 100px; height: 100px" src="https://i.postimg.cc/3rmcmWRm/watch.jpg" alt="" />
+            </a>
+            <h6 style="text-decoration: none; text-align: center; color: black">
+                <strong>Watches</strong>
+            </h6>
+        </div>
+    </div>
+</div>
+
+
+
 <!-- Section-->
 <section class="py-5">
     <div class="container px-4 px-lg-5 mt-5">
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <div *ngFor="let product of products" class="col mb-5">
+            <div *ngFor="let product of filtercategory" class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img style="height: 200px;" class="card-img-top" src="{{product.productImage}}" alt="..." />
+                    <img style="height: 200px" class="card-img-top" src="{{ product.productImage }}" alt="..." />
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <h5 class="fw-bolder">{{product.productName}}</h5>
+                            <h5 class="fw-bolder">{{ product.productName }}</h5>
                             <!-- Product price-->
-                            {{product.price}} Rs
+                            &#8377;{{ product.price }}
                         </div>
                     </div>
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="products/view-product/{{product.id}}">View options</a></div>
+                        <div class="text-center">
+                            <a class="btn btn-outline-dark mt-auto" href="products/view-product/{{ product.id }}">View
+                                options</a>
+                        </div>
                     </div>
                 </div>
             </div>

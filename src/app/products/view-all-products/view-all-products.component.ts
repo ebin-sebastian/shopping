@@ -9,6 +9,7 @@ import { ProductService } from '../product.service';
 export class ViewAllProductsComponent {
 
   products:any
+  filtercategory:any
 
   constructor(private productService:ProductService){}
 
@@ -18,4 +19,13 @@ export class ViewAllProductsComponent {
       this.products=data
     })
   }
+
+filter(category:any){
+  this.filtercategory=this.products.filter((item:any)=>{
+    if(item.categoryId==category  || category==''){
+      return item
+    }
+  })
+}
+
 }
