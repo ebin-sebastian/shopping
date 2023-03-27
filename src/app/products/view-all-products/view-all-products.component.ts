@@ -10,6 +10,7 @@ export class ViewAllProductsComponent {
 
   products:any
   filtercategory:any
+  searchKey:any=''
 
   constructor(private productService:ProductService){}
 
@@ -17,6 +18,10 @@ export class ViewAllProductsComponent {
     this.productService.viewAllproduct().subscribe(data=>{
       // console.log(data);
       this.products=data
+    })
+
+    this.productService.search.subscribe((value:any)=>{
+      this.searchKey=value
     })
   }
 

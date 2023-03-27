@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductService } from 'src/app/products/product.service';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  searchterm:any
+
+  constructor(private productservice:ProductService){}
+
+  search(event:any){
+      this.searchterm=event.target.value
+      this.productservice.search.next(this.searchterm)
+  }
 }

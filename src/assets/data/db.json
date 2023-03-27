@@ -106,7 +106,7 @@
       },
       {
          "id": 9,
-         "productName": "i9 Laptop",
+         "productName": "Lenovo i9 Laptop",
          "categoryId": 1,
          "description": "best laptop",
          "price": 99000,
@@ -145,7 +145,7 @@
       },
       {
          "id": 12,
-         "productName": "G-shock 888g",
+         "productName": "G-shock 888g watch",
          "categoryId": 3,
          "description": "Ultra durable watch",
          "price": 18500,
